@@ -7,3 +7,4 @@ project (leetcode)
 
 # 包含子项目。
 add_subdirectory ("0001")
+add_subdirectory ("0002")
