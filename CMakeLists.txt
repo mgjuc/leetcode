@@ -7,4 +7,7 @@ project (leetcode)
 
 # 包含子项目。
 add_subdirectory ("0001")
-add_subdirectory ("0002")
+add_subdirectory ("0009")
+
+# 添加生成可执行目标
+add_executable(longestCommonPrefix "0014/0014.cpp")

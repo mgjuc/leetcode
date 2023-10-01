@@ -3,10 +3,10 @@
 #
 
 # 将源代码添加到此项目的可执行文件。
-add_executable (0002 "0002.cpp")
+add_executable (0009 "0009.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET 0002 PROPERTY CXX_STANDARD 20)
+  set_property(TARGET 0009 PROPERTY CXX_STANDARD 20)
 endif()
 
 # TODO: 如有需要，请添加测试并安装目标。
