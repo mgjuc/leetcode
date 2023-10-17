@@ -3,19 +3,19 @@
 
 class Solution {
 public:
-	//È¡ËùÓĞ×Ö·û£¬È»ºóÊ×Î²±È½Ï ĞÔÄÜ²îo(log2n)
+	//å–æ‰€æœ‰å­—ç¬¦ï¼Œç„¶åé¦–å°¾æ¯”è¾ƒ æ€§èƒ½å·®o(log2n)
 	static bool isPalindrome(int x) {
 
-		//¸ºÊı
+		//è´Ÿæ•°
 		if (x < 0) return false;
 
-		//1Î»Êı
+		//1ä½æ•°
 		if (x < 10) return true;
 
-		//TODO Î²Êı0ÌØ»¯£¬ÎÒÃ»¿¼ÂÇµ½
+		//TODO å°¾æ•°0ç‰¹åŒ–ï¼Œæˆ‘æ²¡è€ƒè™‘åˆ°
 		if (x % 10 == 0 && x != 0) return false;
 
-		//ÕûÊı×ªÊı×é
+		//æ•´æ•°è½¬æ•°ç»„
 		std::vector<int> nums;
 		while (x / 10 > 0)
 		{
@@ -24,8 +24,8 @@ public:
 		}
 		nums.push_back(x);
 
-		//Ê×Î²ÅĞ¶Ï
-		//×îºóµÄÊı£¬·ÖÆæÅ¼´¦Àí
+		//é¦–å°¾åˆ¤æ–­
+		//æœ€åçš„æ•°ï¼Œåˆ†å¥‡å¶å¤„ç†
 		int mind = nums.size() % 2 == 0 ? nums.size() / 2 - 1 : nums.size() / 2;
 		int i = 0;
 		while (nums[i] == nums[nums.size() - 1 - i]) {
@@ -36,12 +36,12 @@ public:
 		return false;
 	}
 
-	//±ê×¼´ğ°¸£ºËã³öµ¹ĞòÕûÊı£¬Ö±½Ó±È½Ï £¬Ò»´ÎÑ­»·
+	//æ ‡å‡†ç­”æ¡ˆï¼šç®—å‡ºå€’åºæ•´æ•°ï¼Œç›´æ¥æ¯”è¾ƒ ï¼Œä¸€æ¬¡å¾ªç¯
 	static bool isPalindrome_nice(int x) {
 		if (x < 0 || (x % 10 == 0 && x != 0)) return false;
 		int t = x;
 		long rev = 0;
-		//ÕûÊıµ¹Ğò
+		//æ•´æ•°å€’åº
 		while (t != 0) {
 			rev = t % 10 + rev * 10;
 			t = t / 10;
@@ -53,7 +53,7 @@ public:
 
 int main()
 {
-	std::cout << "»ØÎÄÊı" << std::endl;
+	std::cout << "å›æ–‡æ•°" << std::endl;
 	int x = 121;
 	std::cout << Solution::isPalindrome(x) << std::endl;
 	return 0;

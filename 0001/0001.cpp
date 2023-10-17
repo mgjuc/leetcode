@@ -10,7 +10,7 @@ public:
 		std::map<int, int> buffer ;
 
 		for (int i = 0; i < nums.size(); i++) {
-			//ÅĞ¶Ï»ú¼ÓÊÇ·ñµÈÓÚÄ¿±ê
+			//åˆ¤æ–­æœºåŠ æ˜¯å¦ç­‰äºç›®æ ‡
 			if (buffer.count(target - nums[i]))
 			{
 				result[0] = buffer.at(target - nums[i]);
@@ -18,7 +18,7 @@ public:
 				break;
 			}
 
-			//ÏòBuffer¼ÇÂ¼ÒÑ¾­Ëã¹ıµÄÖµ
+			//å‘Bufferè®°å½•å·²ç»ç®—è¿‡çš„å€¼
 			buffer[nums[i]] = i;
 		}
 		return result;
@@ -27,7 +27,7 @@ public:
 
 int main()
 {
-	std::cout << "Á½ÊıÖ®ºÍ" << std::endl;
+	std::cout << "ä¸¤æ•°ä¹‹å’Œ" << std::endl;
 
 	std::vector<int> nums(3);
 	nums[0] = 3;
