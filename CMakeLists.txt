@@ -11,3 +11,4 @@ add_subdirectory ("0009")
 
 # 添加生成可执行目标
 add_executable(longestCommonPrefix "0014/0014.cpp")
+add_executable(lengthOfLongestSubstring src/0003.cpp)
