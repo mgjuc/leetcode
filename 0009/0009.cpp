@@ -1,3 +1,7 @@
+/**
+ * 判断回文数
+*/
+
 #include <iostream>
 #include <vector>
 

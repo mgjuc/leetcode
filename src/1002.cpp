@@ -1,3 +1,8 @@
+/**
+ * Remove Duplicates from Sorted Array II，允许2个重复
+ * 
+ */
+
 #include <iostream>
 #include <string>
 #include <vector>
