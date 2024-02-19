@@ -2,8 +2,8 @@
 # 并包含子项目。
 #
 cmake_minimum_required (VERSION 3.8)
-
 project (leetcode)
+set(CMAKE_CXX_STANDARD 17)
 
 # 包含子项目。
 add_subdirectory ("0001")
@@ -14,3 +14,5 @@ add_executable(longestCommonPrefix "0014/0014.cpp")
 add_executable(lengthOfLongestSubstring src/0003.cpp)
 add_executable(removeDuplicatesOfArray src/1001.cpp)
 add_executable(why6 src/0001.cpp)
+add_executable(removeelement src/removeelement.cpp)
+set_property(TARGET removeelement PROPERTY CXX_STANDARD 20)
