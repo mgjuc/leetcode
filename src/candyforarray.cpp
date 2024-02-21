@@ -35,10 +35,12 @@ private:
       return candies[index];
     }
     int left = 1, right = 1;
+    //算左边最值
     if (index > 0 && ratings[index] > ratings[index - 1])
     {
       left = getcandy(candies, ratings, index - 1) + 1;
     }
+    //算右边最值
     if (index < ratings.size() - 1 && ratings[index] > ratings[index + 1])
     {
       right = getcandy(candies, ratings, index + 1) + 1;
