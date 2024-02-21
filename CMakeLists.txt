@@ -3,6 +3,7 @@
 #
 cmake_minimum_required (VERSION 3.8)
 project (leetcode)
+#设置全局c++标准
 set(CMAKE_CXX_STANDARD 17)
 
 # 包含子项目。
@@ -16,7 +17,12 @@ add_executable(removeDuplicatesOfArray src/1001.cpp)
 add_executable(why6 src/0001.cpp)
 add_executable(removeelement src/removeelement.cpp)
 add_executable(twosumII src/twosumII.cpp)
+
+#设置指定程序c++标准
 set_property(TARGET removeelement PROPERTY CXX_STANDARD 20)
+
 add_executable(threesum src/threesum.cpp)
 add_executable(nextPermutation src/nextPermutation.cpp)
 add_executable(trappingrainwater src/trappingrainwater.cpp)
+add_executable(rotateimage src/rotateimage.cpp)
+add_executable(arrayplus src/arrayplus.cpp)

@@ -1,5 +1,5 @@
 /**
- * Rotate Image
+ * Rotate Image 数据距阵顺时针旋转90度
  * 2024/02/21 10:28
  */
 
@@ -15,7 +15,7 @@ public:
   {
     const int size = matrix.size();
     // 上下翻转
-    for (int i = 0; i < size / 2; i++)  //size/2 处理一半，否翻两次变回去了
+    for (int i = 0; i < size / 2; i++)  //size/2 处理一半，否则翻两次变回去了
     {
       for (int j = 0; j < size; j++)
       {
