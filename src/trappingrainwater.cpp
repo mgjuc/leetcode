@@ -42,6 +42,7 @@ public:
 
     return sum;
   }
+  
   // 先找出最高方块，再分左右求存水量。左边只要求左最高，右边只要求右最高
   static int trap1(const std::vector<int> A)
   {
