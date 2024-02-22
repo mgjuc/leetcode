@@ -1,5 +1,5 @@
 /**
- * Majority Element
+ * Majority Element 摩尔投票法
 */
 
 #include <stdio.h>
@@ -17,6 +17,8 @@ public:
     return nums[n/2];
   }
 
+
+  //摩尔投票法
   //由于超过n/2，可以用相抵消的思想，凡是和最多元素不相等的，就抵消
   int majorityElement1(std::vector<int>& nums){
     int count = 0, element = 0;
