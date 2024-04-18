@@ -1,3 +1,7 @@
+/**
+ * 数组向右边出，从左边进，循环
+ */
+
 #include <stdio.h>
 #include <iostream>
 #include <vector>
@@ -8,26 +12,32 @@ int result[9];
 class Solution
 {
 public:
-  /*   std::vector<int> rotateArray(std::vector<int> &nums, int k)
-    {
-      std::vector<int> right(k, 0);
-  #ifdef __cpp_lib_containers_ranges
-      right.append_range();
-  #else
-      right.insert(right.begin(), nums.end() - k, nums.end());
-      printArray(right);
-  #endif
-      right.insert(right.begin() + k, nums.begin(), nums.end() - k);
-      right.erase(right.end() - k, right.end());
-      nums = right;
+  std::vector<int> rotateArray(std::vector<int> &nums, int k)
+  {
+    std::vector<int> right(k, 0);
+    // 在指定地址插入
+#ifdef __cpp_lib_containers_ranges
+    right.append_range();
+#else
+    right.insert(right.begin(), nums.end() - k, nums.end());
+    // printArray(right);
+#endif
+    right.insert(right.begin() + k, nums.begin(), nums.end() - k);
+    right.erase(right.end() - k, right.end());
+    nums = right;
 
-      return nums;
-    } */
+    return nums;
+  }
 
   int *rotate(int nums[], int k, int n)
   {
     // int size = sizeof(nums)/sizeof(nums[0]); error：sizeof是在编译阶段展开的一个宏，函数参数在运行阶段以压栈方式传递了一个地址
-    k %= n;
+    /**
+     * 三次翻转
+     * 123456789
+     * 54321 9876   987654321
+     * 678912345    6789 12345
+     * */
     reverse(nums, 0, n - k);
     reverse(nums, n - k, n);
     reverse(nums, 0, n);
@@ -48,6 +58,9 @@ public:
     {
       // int v = *((*nums) + i);
       int v = (*nums)[i];
+      /**
+       * 利用取余实现循环
+       */
       int index = (i + k) % n;
       result[index] = v;
     }
@@ -88,27 +101,27 @@ int main(int argc, char *argv[])
   std::cout << "arr address " << arr << std::endl;
   std::cout << "result address " << result << std::endl;
   int n = sizeof(arr) / sizeof(arr[0]);
-  // s.rotate(arr, 4, n);
-  a = arr;
-  std::cout << "a " << a << std::endl;
-  int *n1 = s.rotate1(&a, 4, n);
+  s.rotate(arr, 4, n);
+  // a = arr;
+  // std::cout << "a " << a << std::endl;
+  // int *n1 = s.rotate1(&a, 4, n);
   std::cout << "arr address " << arr << std::endl;
   for (int i = 0; i < n; i++)
   {
     std::cout << arr[i];
   }
-  std::cout << std::endl
-            << "n1 " << n1 << std::endl;
-  std::cout << "a " << a << std::endl;
-  for (int i = 0; i < n; i++)
-  {
-    std::cout << *(n1 + i);
-  }
-  std::cout << std::endl
-            << "array " << std::endl;
-  for (int i = 0; i < n; i++)
-  {
-    std::cout << *(arr + i);
-  }
+  // std::cout << std::endl
+  //           << "n1 " << n1 << std::endl;
+  // std::cout << "a " << a << std::endl;
+  // for (int i = 0; i < n; i++)
+  // {
+  //   std::cout << *(n1 + i);
+  // }
+  // std::cout << std::endl
+  //           << "array " << std::endl;
+  // for (int i = 0; i < n; i++)
+  // {
+  //   std::cout << *(arr + i);
+  // }
   return 0;
 }
